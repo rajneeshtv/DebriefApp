@@ -1,0 +1,7 @@
+streamlit
+sqlite-utils
+transformers
+sentence-transformers
+speechrecognition
+pydub
+soundfile
