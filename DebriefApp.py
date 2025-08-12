@@ -9,7 +9,7 @@ from sentence_transformers import SentenceTransformer
 os.makedirs("uploads", exist_ok=True)
 
 # Database path (warning: Streamlit Cloud resets local DB when app restarts)
-DB_PATH = "debrief_app.db"
+DB_PATH = "debrief_app1.db"
 
 # --- Initialize Database ---
 def init_db():
