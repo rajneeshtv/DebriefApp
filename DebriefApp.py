@@ -26,6 +26,9 @@ def init_db():
     conn.commit()
     conn.close()
 
+# Initialize DB on first run
+init_db()
+
 # --- Cache Models ---
 @st.cache_resource
 def load_models():
@@ -92,5 +95,3 @@ elif choice == "View Debriefs":
     else:
         st.info("No debriefs found.")
 
-# Initialize DB on first run
-init_db()
