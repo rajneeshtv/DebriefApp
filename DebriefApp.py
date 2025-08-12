@@ -15,7 +15,7 @@ DB_PATH = "debrief_app1.db"
 def init_db():
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS debriefs (
+    c.execute('''CREATE TABLE IF NOT EXISTS debriefs1 (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     text TEXT,
                     summary TEXT,
@@ -43,7 +43,7 @@ summarizer, sentiment_analyzer, embedder = load_models()
 def save_debrief(text, summary, sentiment, embedding):
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
-    c.execute("INSERT INTO debriefs (text, summary, sentiment, embedding, timestamp) VALUES (?, ?, ?, ?, ?)",
+    c.execute("INSERT INTO debriefs1 (text, summary, sentiment, embedding, timestamp) VALUES (?, ?, ?, ?, ?)",
               (text, summary, sentiment, embedding.tobytes(), datetime.now().isoformat()))
     conn.commit()
     conn.close()
@@ -52,7 +52,7 @@ def save_debrief(text, summary, sentiment, embedding):
 def fetch_debriefs():
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
-    c.execute("SELECT id, text, summary, sentiment, timestamp FROM debriefs ORDER BY id DESC")
+    c.execute("SELECT id, text, summary, sentiment, timestamp FROM debriefs1 ORDER BY id DESC")
     rows = c.fetchall()
     conn.close()
     return rows
