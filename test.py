@@ -81,3 +81,4 @@ def transcribe_audio_google(audio_file):
         return f"Google Speech Recognition request failed: {e}"
 transcript_text = transcribe_audio_google('uploads\b9fba493-351b-487e-8e3d-3180c9b52ef2_Sejal_2.m4a')
 """
+
