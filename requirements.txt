@@ -1,5 +1,4 @@
 streamlit
-sqlite3-binary
 pydub
 SpeechRecognition
 transformers
