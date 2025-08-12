@@ -1,7 +1,8 @@
 streamlit
-sqlite-utils
+sqlite3-binary
+pydub
+SpeechRecognition
 transformers
 sentence-transformers
-speechrecognition
-pydub
-soundfile
+torch
+torchaudio
